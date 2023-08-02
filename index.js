@@ -17,7 +17,7 @@ app.use(express.json())
 
 //middleware
 app.use(cors())
-app.use(cookieparser())
+app.use(cookieparser(process.env.API_ACCESS_SECRET))
 
 // default route
 app.get(`/`,(req,res) => {
