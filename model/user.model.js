@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     image: {
         type: Object,
         default: {
-            url: "http://extendedevolutionarysynthesis.com/avatar-1577909_960_720/"
+            url: "https://tse4.mm.bing.net/th?id=OIP.KtahHX0mDy-mEQO16gKJdAAAAA&pid=Api&P=0&h=180"
         }
     },
     address:{
