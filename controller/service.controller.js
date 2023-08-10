@@ -1,8 +1,11 @@
 const { StatusCodes } =require('http-status-codes')
+const Service = require('../model/service.model')
 //get all service
 const getServices = async (req,res) => {
     try{
-        res.status(StatusCodes.OK).json({ msg: "get service" })
+        const data=  await Service.find({});
+
+        res.status(StatusCodes.OK).json({length: data.length,service: data })
     } catch (err) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: err.message })
     }
@@ -11,7 +14,12 @@ const getServices = async (req,res) => {
 //get single service
 const getSingleService = async (req,res) => {
     try{
-        res.status(StatusCodes.OK).json({ msg: "get service" })
+        let id = req.params.id
+        let extService= await Service.findById({ _id: id})
+            if(!extService)
+        return res.status(StatusCodes.NOT_FOUND).json({ msg: "service id not found" })
+
+        res.status(StatusCodes.OK).json({ service: extService})
     } catch (err) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: err.message })
     }
