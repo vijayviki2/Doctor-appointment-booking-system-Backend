@@ -33,6 +33,7 @@ app.use('/api/auth', require('./route/auth.route'))
 app.use('/api/doctor', require('./route/doctor.route'))
 app.use('/api/service', require('./route/service.route'))
 app.use('/api/user', require('./route/user.route'))
+app.use('/api/slot', require('./route/slot.route'))
 
 //portlisten
 

@@ -8,7 +8,7 @@ const slotSchema =  new mongoose.Schema({
     },
     slot_date:{
         type: Date,
-        default:  Date.now()
+        required: true
     },
     slot_status: {
         type: Boolean,

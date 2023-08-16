@@ -5,10 +5,6 @@ const appointmentSchema =  new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
-    app_date:{
-        type: Date,
-        default:  Date.now()
-    },
     service_id:{
         type: mongoose.Schema.Types.ObjectId,
         required: true
@@ -19,7 +15,7 @@ const appointmentSchema =  new mongoose.Schema({
     },
     app_date:{
         type: Date,
-        default:  Date.now(),
+        default:  new Date().toLocaleString()
     },
     app_status:{
         type: String,
